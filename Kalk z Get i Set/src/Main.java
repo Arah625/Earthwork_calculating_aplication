@@ -12,7 +12,7 @@ public class Main {
         TrapeziumPrism inputAndOutputTrapeziumPrism = new TrapeziumPrism();
 
 
-        do {
+        while (programIsRunning) {
             MenuToDisplay.displayMainMenu();
             int choseTypeOfTrench = scanner.nextInt();
 
@@ -201,6 +201,6 @@ public class Main {
                     System.out.println("Wrong button! Please select 1 or 2.");
                     break;
             }
-        } while (scanner.nextInt() ==0);
+        }
     }
 }
