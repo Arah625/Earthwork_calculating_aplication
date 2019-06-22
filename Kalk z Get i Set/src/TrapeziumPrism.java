@@ -1,373 +1,196 @@
 public class TrapeziumPrism {
 
-    private String trapeziumPrismBeginningChainage;
-    private String trapeziumPrismClosingChainage;
-    private float firstTrapeziumTopBase;
-    private float firstTrapeziumBottomBase;
-    private float firstTrapeziumBottomOrdinate1;
-    private float firstTrapeziumBottomOrdinate2;
-    private float firstTrapeziumTopOrdinate1;
-    private float firstTrapeziumTopOrdinate2;
-    private float firstTrapeziumHeight;
+    private String BeginningChainage;
+    private String ClosingChainage;
+    private float firstTopBase;
+    private float firstBottomBase;
+    private float firstBottomOrdinate1;
+    private float firstBottomOrdinate2;
+    private float firstTopOrdinate1;
+    private float firstTopOrdinate2;
+    private float firstHeight;
 
-    private float secondTrapeziumTopBase;
-    private float secondTrapeziumBottomBase;
-    private float secondTrapeziumBottomOrdinate1;
-    private float secondTrapeziumBottomOrdinate2;
-    private float secondTrapeziumTopOrdinate1;
-    private float secondTrapeziumTopOrdinate2;
-    private float secondTrapeziumHeight;
+    private float secondTopBase;
+    private float secondBottomBase;
+    private float secondBottomOrdinate1;
+    private float secondBottomOrdinate2;
+    private float secondTopOrdinate1;
+    private float secondTopOrdinate2;
+    private float secondHeight;
 
-    private float medialTrapeziumTopBase;
-    private float medialTrapeziumBottomBase;
-    private float medialTrapeziumBottomOrdinate1;
-    private float medialTrapeziumBottomOrdinate2;
-    private float medialTrapeziumTopOrdinate1;
-    private float medialTrapeziumTopOrdinate2;
-    private float medialTrapeziumHeight;
+    private float medialTopBase;
+    private float medialBottomBase;
+    private float medialBottomOrdinate1;
+    private float medialBottomOrdinate2;
+    private float medialTopOrdinate1;
+    private float medialTopOrdinate2;
+    private float medialHeight;
 
-    private String replacedSumSignInTrapeziumPrismBeginningChainage;
-    private String replacedSumSignInTrapeziumPrismClosingChainage;
-    private float convertedTrapeziumPrismStringBeginningChainageToFloat;
-    private float convertedTrapeziumPrismStringClosingChainageToFloat;
-    private float trapeziumPrismLength;
+    private float topWidthForSimpsonMethod;
+    private float topLengthForSimpsonMethod;
+    private float bottomWidthForSimpsonMethod;
+    private float bottomLengthForSimpsonMethod;
+    private float topOrdinate1ForSimpsonMethod;
+    private float topOrdinate2ForSimpsonMethod;
+    private float bottomOrdinate1ForSimpsonMethod;
+    private float bottomOrdinate2ForSimpsonMethod;
+    private float heightForSimpsonMethod;
 
-
-    private float trapeziumPrismVariableAForTopSurfaceAreaForSimpsonMethod;
-    private float trapeziumPrismVariableBForTopSurfaceAreaForSimpsonMethod;
-    private float trapeziumPrismVariableCForBottomSurfaceAreaForSimpsonMethod;
-    private float trapeziumPrismVariableDForBottomSurfaceAreaForSimpsonMethod;
-    private float trapeziumPrismTopOrdinate1ForSimpsonMethod;
-    private float trapeziumPrismTopOrdinate2ForSimpsonMethod;
-    private float trapeziumPrismBottomOrdinate1ForSimpsonMethod;
-    private float trapeziumPrismBottomOrdinate2ForSimpsonMethod;
-    private float trapeziumPrismHeightForSimpsonMethod;
-
-
-    private float trapeziumPrismBottomSurfaceAreaForSimpsonMethod = trapeziumPrismVariableCForBottomSurfaceAreaForSimpsonMethod * trapeziumPrismVariableDForBottomSurfaceAreaForSimpsonMethod;
-    private float trapeziumPrismTopSurfaceAreaForSimpsonMethod = trapeziumPrismVariableAForTopSurfaceAreaForSimpsonMethod * trapeziumPrismVariableBForTopSurfaceAreaForSimpsonMethod;
-    private float trapeziumPrismMiddleSurfaceAreaForSimpsonMethod = (trapeziumPrismVariableAForTopSurfaceAreaForSimpsonMethod * trapeziumPrismVariableCForBottomSurfaceAreaForSimpsonMethod) * (trapeziumPrismVariableBForTopSurfaceAreaForSimpsonMethod * trapeziumPrismVariableDForBottomSurfaceAreaForSimpsonMethod);
-
-
-    public String getTrapeziumPrismBeginningChainage() {
-        return trapeziumPrismBeginningChainage;
+    public String getBeginningChainage() {
+        return BeginningChainage;
     }
 
-    public void setTrapeziumPrismBeginningChainage(String trapeziumPrismBeginningChainage) {
-        if (trapeziumPrismBeginningChainage.isEmpty()) {
+    public void setBeginningChainage(String beginningChainage) {
+        if (beginningChainage.isEmpty()) {
             System.out.println("Wrong extension");
         } else {
-            this.trapeziumPrismBeginningChainage = trapeziumPrismBeginningChainage.replace("+", "");
+            this.BeginningChainage = beginningChainage.replace("+", "");
         }
     }
 
-    public String getTrapeziumPrismClosingChainage() {
-        return trapeziumPrismClosingChainage;
+    public String getClosingChainage() {
+        return ClosingChainage;
     }
 
-    public void setTrapeziumPrismClosingChainage(String trapeziumPrismClosingChainage) {
-        if (trapeziumPrismClosingChainage.isEmpty()) {
+    public void setClosingChainage(String closingChainage) {
+        if (closingChainage.isEmpty()) {
             System.out.println("Wrong extension");
         } else {
-            this.trapeziumPrismClosingChainage = trapeziumPrismClosingChainage.replace("+", "");
+            this.ClosingChainage = closingChainage.replace("+", "");
         }
     }
 
-    public float getFirstTrapeziumTopBase() {
-        return firstTrapeziumTopBase;
+    public void setFirstTopBase(float firstTopBase) {
+        this.firstTopBase = firstTopBase;
     }
 
-    public void setFirstTrapeziumTopBase(float firstTrapeziumTopBase) {
-        this.firstTrapeziumTopBase = firstTrapeziumTopBase;
+    public void setFirstBottomBase(float firstTrapeziumBottomBase) {
+        this.firstBottomBase = firstTrapeziumBottomBase;
     }
 
-    public float getFirstTrapeziumBottomBase() {
-        return firstTrapeziumBottomBase;
+    public void setFirstBottomOrdinate1(float firstBottomOrdinate1) {
+        this.firstBottomOrdinate1 = firstBottomOrdinate1;
     }
 
-    public void setFirstTrapeziumBottomBase(float firstTrapeziumBottomBase) {
-        this.firstTrapeziumBottomBase = firstTrapeziumBottomBase;
+    public void setFirstBottomOrdinate2(float firstBottomOrdinate2) {
+        this.firstBottomOrdinate2 = firstBottomOrdinate2;
     }
 
-    public float getFirstTrapeziumBottomOrdinate1() {
-        return firstTrapeziumBottomOrdinate1;
+    public void setFirstTopOrdinate1(float firstTopOrdinate1) {
+        this.firstTopOrdinate1 = firstTopOrdinate1;
     }
 
-    public void setFirstTrapeziumBottomOrdinate1(float firstTrapeziumBottomOrdinate1) {
-        this.firstTrapeziumBottomOrdinate1 = firstTrapeziumBottomOrdinate1;
+    public void setFirstTopOrdinate2(float firstTopOrdinate2) {
+        this.firstTopOrdinate2 = firstTopOrdinate2;
     }
 
-    public float getFirstTrapeziumBottomOrdinate2() {
-        return firstTrapeziumBottomOrdinate2;
+    public void setFirstHeight(float firstHeight) {
+        this.firstHeight = firstHeight;
     }
 
-    public void setFirstTrapeziumBottomOrdinate2(float firstTrapeziumBottomOrdinate2) {
-        this.firstTrapeziumBottomOrdinate2 = firstTrapeziumBottomOrdinate2;
+    public void setSecondTopBase(float secondTopBase) {
+        this.secondTopBase = secondTopBase;
     }
 
-    public float getFirstTrapeziumTopOrdinate1() {
-        return firstTrapeziumTopOrdinate1;
+    public void setSecondBottomBase(float secondBottomBase) {
+        this.secondBottomBase = secondBottomBase;
     }
 
-    public void setFirstTrapeziumTopOrdinate1(float firstTrapeziumTopOrdinate1) {
-        this.firstTrapeziumTopOrdinate1 = firstTrapeziumTopOrdinate1;
+    public void setSecondBottomOrdinate1(float secondBottomOrdinate1) {
+        this.secondBottomOrdinate1 = secondBottomOrdinate1;
     }
 
-    public float getFirstTrapeziumTopOrdinate2() {
-        return firstTrapeziumTopOrdinate2;
+    public void setSecondBottomOrdinate2(float secondBottomOrdinate2) {
+        this.secondBottomOrdinate2 = secondBottomOrdinate2;
     }
 
-    public void setFirstTrapeziumTopOrdinate2(float firstTrapeziumTopOrdinate2) {
-        this.firstTrapeziumTopOrdinate2 = firstTrapeziumTopOrdinate2;
+    public void setSecondTopOrdinate1(float secondTopOrdinate1) {
+        this.secondTopOrdinate1 = secondTopOrdinate1;
     }
 
-    public float getFirstTrapeziumHeight() {
-        return firstTrapeziumHeight;
+    public void setSecondTopOrdinate2(float secondTopOrdinate2) {
+        this.secondTopOrdinate2 = secondTopOrdinate2;
     }
 
-    public void setFirstTrapeziumHeight(float firstTrapeziumHeight) {
-        this.firstTrapeziumHeight = firstTrapeziumHeight;
+    public void setSecondHeight(float secondHeight) {
+        this.secondHeight = secondHeight;
     }
 
-    public float getSecondTrapeziumTopBase() {
-        return secondTrapeziumTopBase;
+    public void setMedialTopBase(float medialTopBase) {
+        this.medialTopBase = medialTopBase;
     }
 
-    public void setSecondTrapeziumTopBase(float secondTrapeziumTopBase) {
-        this.secondTrapeziumTopBase = secondTrapeziumTopBase;
+    public void setMedialBottomBase(float medialBottomBase) {
+        this.medialBottomBase = medialBottomBase;
     }
 
-    public float getSecondTrapeziumBottomBase() {
-        return secondTrapeziumBottomBase;
+    public void setMedialBottomOrdinate1(float medialBottomOrdinate1) {
+        this.medialBottomOrdinate1 = medialBottomOrdinate1;
     }
 
-    public void setSecondTrapeziumBottomBase(float secondTrapeziumBottomBase) {
-        this.secondTrapeziumBottomBase = secondTrapeziumBottomBase;
+    public void setMedialBottomOrdinate2(float medialBottomOrdinate2) {
+        this.medialBottomOrdinate2 = medialBottomOrdinate2;
     }
 
-    public float getSecondTrapeziumBottomOrdinate1() {
-        return secondTrapeziumBottomOrdinate1;
+    public void setMedialTopOrdinate1(float medialTopOrdinate1) {
+        this.medialTopOrdinate1 = medialTopOrdinate1;
     }
 
-    public void setSecondTrapeziumBottomOrdinate1(float secondTrapeziumBottomOrdinate1) {
-        this.secondTrapeziumBottomOrdinate1 = secondTrapeziumBottomOrdinate1;
+    public void setMedialTopOrdinate2(float medialTopOrdinate2) {
+        this.medialTopOrdinate2 = medialTopOrdinate2;
     }
 
-    public float getSecondTrapeziumBottomOrdinate2() {
-        return secondTrapeziumBottomOrdinate2;
+    public void setMedialHeight(float medialHeight) {
+        this.medialHeight = medialHeight;
     }
 
-    public void setSecondTrapeziumBottomOrdinate2(float secondTrapeziumBottomOrdinate2) {
-        this.secondTrapeziumBottomOrdinate2 = secondTrapeziumBottomOrdinate2;
+    public void setTopWidthForSimpsonMethod(float topWidthForSimpsonMethod) {
+        this.topWidthForSimpsonMethod = topWidthForSimpsonMethod;
     }
 
-    public float getSecondTrapeziumTopOrdinate1() {
-        return secondTrapeziumTopOrdinate1;
+    public void setTopLengthForSimpsonMethod(float topLengthForSimpsonMethod) {
+        this.topLengthForSimpsonMethod = topLengthForSimpsonMethod;
     }
 
-    public void setSecondTrapeziumTopOrdinate1(float secondTrapeziumTopOrdinate1) {
-        this.secondTrapeziumTopOrdinate1 = secondTrapeziumTopOrdinate1;
+    public void setBottomWidthForSimpsonMethod(float bottomWidthForSimpsonMethod) {
+        this.bottomWidthForSimpsonMethod = bottomWidthForSimpsonMethod;
     }
 
-    public float getSecondTrapeziumTopOrdinate2() {
-        return secondTrapeziumTopOrdinate2;
+    public void setBottomLengthForSimpsonMethod(float bottomLengthForSimpsonMethod) {
+        this.bottomLengthForSimpsonMethod = bottomLengthForSimpsonMethod;
     }
 
-    public void setSecondTrapeziumTopOrdinate2(float secondTrapeziumTopOrdinate2) {
-        this.secondTrapeziumTopOrdinate2 = secondTrapeziumTopOrdinate2;
+    public void setTopOrdinate1ForSimpsonMethod(float topOrdinate1ForSimpsonMethod) {
+        this.topOrdinate1ForSimpsonMethod = topOrdinate1ForSimpsonMethod;
     }
 
-    public float getSecondTrapeziumHeight() {
-        return secondTrapeziumHeight;
+    public void setTopOrdinate2ForSimpsonMethod(float topOrdinate2ForSimpsonMethod) {
+        this.topOrdinate2ForSimpsonMethod = topOrdinate2ForSimpsonMethod;
     }
 
-    public void setSecondTrapeziumHeight(float secondTrapeziumHeight) {
-        this.secondTrapeziumHeight = secondTrapeziumHeight;
+    public void setBottomOrdinate1ForSimpsonMethod(float bottomOrdinate1ForSimpsonMethod) {
+        this.bottomOrdinate1ForSimpsonMethod = bottomOrdinate1ForSimpsonMethod;
     }
 
-    public float getMedialTrapeziumTopBase() {
-        return medialTrapeziumTopBase;
+    public void setBottomOrdinate2ForSimpsonMethod(float bottomOrdinate2ForSimpsonMethod) {
+        this.bottomOrdinate2ForSimpsonMethod = bottomOrdinate2ForSimpsonMethod;
     }
 
-    public void setMedialTrapeziumTopBase(float medialTrapeziumTopBase) {
-        this.medialTrapeziumTopBase = medialTrapeziumTopBase;
+    public void setHeightForSimpsonMethod(float heightForSimpsonMethod) {
+        this.heightForSimpsonMethod = heightForSimpsonMethod;
     }
 
-    public float getMedialTrapeziumBottomBase() {
-        return medialTrapeziumBottomBase;
+    public float ConvertStringBeginningChainageToFloat() {
+        return Float.parseFloat(getBeginningChainage());
     }
 
-    public void setMedialTrapeziumBottomBase(float medialTrapeziumBottomBase) {
-        this.medialTrapeziumBottomBase = medialTrapeziumBottomBase;
+    public float ConvertStringClosingChainageToFloat() {
+        return Float.parseFloat(getClosingChainage());
     }
 
-    public float getMedialTrapeziumBottomOrdinate1() {
-        return medialTrapeziumBottomOrdinate1;
-    }
-
-    public void setMedialTrapeziumBottomOrdinate1(float medialTrapeziumBottomOrdinate1) {
-        this.medialTrapeziumBottomOrdinate1 = medialTrapeziumBottomOrdinate1;
-    }
-
-    public float getMedialTrapeziumBottomOrdinate2() {
-        return medialTrapeziumBottomOrdinate2;
-    }
-
-    public void setMedialTrapeziumBottomOrdinate2(float medialTrapeziumBottomOrdinate2) {
-        this.medialTrapeziumBottomOrdinate2 = medialTrapeziumBottomOrdinate2;
-    }
-
-    public float getMedialTrapeziumTopOrdinate1() {
-        return medialTrapeziumTopOrdinate1;
-    }
-
-    public void setMedialTrapeziumTopOrdinate1(float medialTrapeziumTopOrdinate1) {
-        this.medialTrapeziumTopOrdinate1 = medialTrapeziumTopOrdinate1;
-    }
-
-    public float getMedialTrapeziumTopOrdinate2() {
-        return medialTrapeziumTopOrdinate2;
-    }
-
-    public void setMedialTrapeziumTopOrdinate2(float medialTrapeziumTopOrdinate2) {
-        this.medialTrapeziumTopOrdinate2 = medialTrapeziumTopOrdinate2;
-    }
-
-    public float getMedialTrapeziumHeight() {
-        return medialTrapeziumHeight;
-    }
-
-    public void setMedialTrapeziumHeight(float medialTrapeziumHeight) {
-        this.medialTrapeziumHeight = medialTrapeziumHeight;
-    }
-
-    public String getReplacedSumSignInTrapeziumPrismBeginningChainage() {
-        return replacedSumSignInTrapeziumPrismBeginningChainage;
-    }
-
-    public void setReplacedSumSignInTrapeziumPrismBeginningChainage(String replacedSumSignInTrapeziumPrismBeginningChainage) {
-        this.replacedSumSignInTrapeziumPrismBeginningChainage = replacedSumSignInTrapeziumPrismBeginningChainage;
-    }
-
-    public String getReplacedSumSignInTrapeziumPrismClosingChainage() {
-        return replacedSumSignInTrapeziumPrismClosingChainage;
-    }
-
-    public void setReplacedSumSignInTrapeziumPrismClosingChainage(String replacedSumSignInTrapeziumPrismClosingChainage) {
-        this.replacedSumSignInTrapeziumPrismClosingChainage = replacedSumSignInTrapeziumPrismClosingChainage;
-    }
-
-    public float getConvertedTrapeziumPrismStringBeginningChainageToFloat() {
-        return convertedTrapeziumPrismStringBeginningChainageToFloat;
-    }
-
-    public void setConvertedTrapeziumPrismStringBeginningChainageToFloat(float convertedTrapeziumPrismStringBeginningChainageToFloat) {
-        this.convertedTrapeziumPrismStringBeginningChainageToFloat = convertedTrapeziumPrismStringBeginningChainageToFloat;
-    }
-
-    public float getConvertedTrapeziumPrismStringClosingChainageToFloat() {
-        return convertedTrapeziumPrismStringClosingChainageToFloat;
-    }
-
-    public void setConvertedTrapeziumPrismStringClosingChainageToFloat(float convertedTrapeziumPrismStringClosingChainageToFloat) {
-        this.convertedTrapeziumPrismStringClosingChainageToFloat = convertedTrapeziumPrismStringClosingChainageToFloat;
-    }
-
-    public float getTrapeziumPrismLength() {
-        return trapeziumPrismLength;
-    }
-
-    public void setTrapeziumPrismLength(float trapeziumPrismLength) {
-        this.trapeziumPrismLength = trapeziumPrismLength;
-    }
-
-    public float getTrapeziumPrismVariableAForTopSurfaceAreaForSimpsonMethod() {
-        return trapeziumPrismVariableAForTopSurfaceAreaForSimpsonMethod;
-    }
-
-    public void setTrapeziumPrismVariableAForTopSurfaceAreaForSimpsonMethod(float trapeziumPrismVariableAForTopSurfaceAreaForSimpsonMethod) {
-        this.trapeziumPrismVariableAForTopSurfaceAreaForSimpsonMethod = trapeziumPrismVariableAForTopSurfaceAreaForSimpsonMethod;
-    }
-
-    public float getTrapeziumPrismVariableBForTopSurfaceAreaForSimpsonMethod() {
-        return trapeziumPrismVariableBForTopSurfaceAreaForSimpsonMethod;
-    }
-
-    public void setTrapeziumPrismVariableBForTopSurfaceAreaForSimpsonMethod(float trapeziumPrismVariableBForTopSurfaceAreaForSimpsonMethod) {
-        this.trapeziumPrismVariableBForTopSurfaceAreaForSimpsonMethod = trapeziumPrismVariableBForTopSurfaceAreaForSimpsonMethod;
-    }
-
-    public float getTrapeziumPrismVariableCForBottomSurfaceAreaForSimpsonMethod() {
-        return trapeziumPrismVariableCForBottomSurfaceAreaForSimpsonMethod;
-    }
-
-    public void setTrapeziumPrismVariableCForBottomSurfaceAreaForSimpsonMethod(float trapeziumPrismVariableCForBottomSurfaceAreaForSimpsonMethod) {
-        this.trapeziumPrismVariableCForBottomSurfaceAreaForSimpsonMethod = trapeziumPrismVariableCForBottomSurfaceAreaForSimpsonMethod;
-    }
-
-    public float getTrapeziumPrismVariableDForBottomSurfaceAreaForSimpsonMethod() {
-        return trapeziumPrismVariableDForBottomSurfaceAreaForSimpsonMethod;
-    }
-
-    public void setTrapeziumPrismVariableDForBottomSurfaceAreaForSimpsonMethod(float trapeziumPrismVariableDForBottomSurfaceAreaForSimpsonMethod) {
-        this.trapeziumPrismVariableDForBottomSurfaceAreaForSimpsonMethod = trapeziumPrismVariableDForBottomSurfaceAreaForSimpsonMethod;
-    }
-
-    public float getTrapeziumPrismTopOrdinate1ForSimpsonMethod() {
-        return trapeziumPrismTopOrdinate1ForSimpsonMethod;
-    }
-
-    public void setTrapeziumPrismTopOrdinate1ForSimpsonMethod(float trapeziumPrismTopOrdinate1ForSimpsonMethod) {
-        this.trapeziumPrismTopOrdinate1ForSimpsonMethod = trapeziumPrismTopOrdinate1ForSimpsonMethod;
-    }
-
-    public float getTrapeziumPrismTopOrdinate2ForSimpsonMethod() {
-        return trapeziumPrismTopOrdinate2ForSimpsonMethod;
-    }
-
-    public void setTrapeziumPrismTopOrdinate2ForSimpsonMethod(float trapeziumPrismTopOrdinate2ForSimpsonMethod) {
-        this.trapeziumPrismTopOrdinate2ForSimpsonMethod = trapeziumPrismTopOrdinate2ForSimpsonMethod;
-    }
-
-    public float getTrapeziumPrismBottomOrdinate1ForSimpsonMethod() {
-        return trapeziumPrismBottomOrdinate1ForSimpsonMethod;
-    }
-
-    public void setTrapeziumPrismBottomOrdinate1ForSimpsonMethod(float trapeziumPrismBottomOrdinate1ForSimpsonMethod) {
-        this.trapeziumPrismBottomOrdinate1ForSimpsonMethod = trapeziumPrismBottomOrdinate1ForSimpsonMethod;
-    }
-
-    public float getTrapeziumPrismBottomOrdinate2ForSimpsonMethod() {
-        return trapeziumPrismBottomOrdinate2ForSimpsonMethod;
-    }
-
-    public void setTrapeziumPrismBottomOrdinate2ForSimpsonMethod(float trapeziumPrismBottomOrdinate2ForSimpsonMethod) {
-        this.trapeziumPrismBottomOrdinate2ForSimpsonMethod = trapeziumPrismBottomOrdinate2ForSimpsonMethod;
-    }
-
-    public float getTrapeziumPrismHeightForSimpsonMethod() {
-        return trapeziumPrismHeightForSimpsonMethod;
-    }
-
-    public void setTrapeziumPrismHeightForSimpsonMethod(float trapeziumPrismHeightForSimpsonMethod) {
-        this.trapeziumPrismHeightForSimpsonMethod = trapeziumPrismHeightForSimpsonMethod;
-    }
-
-    public float ConversionTrapeziumPrismStringBeginningChainageToFloat() {
-        return Float.parseFloat(getTrapeziumPrismBeginningChainage());
-    }
-
-    public float ConversionTrapeziumPrismStringClosingChainageToFloat() {
-        return Float.parseFloat(getTrapeziumPrismClosingChainage());
-    }
-
-    public float ConvertTrapeziumPrismStringChainageToFloatLength() {
-
-        float solutionTrapeziumPrismStringChainageToFloatLength;
-
-        solutionTrapeziumPrismStringChainageToFloatLength = (ConversionTrapeziumPrismStringClosingChainageToFloat() - ConversionTrapeziumPrismStringBeginningChainageToFloat());
+    public float ConvertStringChainageToFloatLength() {
 
-        return solutionTrapeziumPrismStringChainageToFloatLength;
+        return (ConvertStringClosingChainageToFloat() - ConvertStringBeginningChainageToFloat());
     }
 
     public float SolveForFirstTrapezium() {
@@ -375,12 +198,12 @@ public class TrapeziumPrism {
         float firstTrapeziumHeightFromOrdinates;
         float firstTrapeziumAreaFromOrdinatesDifference;
 
-        if (firstTrapeziumHeight <= 0) {
-            firstTrapeziumHeightFromOrdinates = (((firstTrapeziumTopOrdinate1 + firstTrapeziumTopOrdinate2) / 2) - ((firstTrapeziumBottomOrdinate1 + firstTrapeziumBottomOrdinate2) / 2));
-            firstTrapeziumAreaFromOrdinatesDifference = firstTrapeziumTopBase * firstTrapeziumHeightFromOrdinates / 2;
+        if (firstHeight <= 0) {
+            firstTrapeziumHeightFromOrdinates = (((firstTopOrdinate1 + firstTopOrdinate2) / 2) - ((firstBottomOrdinate1 + firstBottomOrdinate2) / 2));
+            firstTrapeziumAreaFromOrdinatesDifference = firstTopBase * firstTrapeziumHeightFromOrdinates / 2;
             return firstTrapeziumAreaFromOrdinatesDifference;
         } else {
-            float firstTrapeziumArea = firstTrapeziumTopBase * firstTrapeziumHeight / 2;
+            float firstTrapeziumArea = firstTopBase * firstHeight / 2;
             solutionForFirstTrapezium = firstTrapeziumArea;
         }
         return solutionForFirstTrapezium;
@@ -392,12 +215,12 @@ public class TrapeziumPrism {
         float secondTrapeziumHeightFromOrdinates;
         float secondTrapeziumAreaFromOrdinatesDifference;
 
-        if (secondTrapeziumHeight <= 0) {
-            secondTrapeziumHeightFromOrdinates = (((secondTrapeziumTopOrdinate1 + secondTrapeziumTopOrdinate2) / 2) - ((secondTrapeziumBottomOrdinate1 + secondTrapeziumBottomOrdinate2) / 2));
-            secondTrapeziumAreaFromOrdinatesDifference = secondTrapeziumTopBase * secondTrapeziumHeightFromOrdinates / 2;
+        if (secondHeight <= 0) {
+            secondTrapeziumHeightFromOrdinates = (((secondTopOrdinate1 + secondTopOrdinate2) / 2) - ((secondBottomOrdinate1 + secondBottomOrdinate2) / 2));
+            secondTrapeziumAreaFromOrdinatesDifference = secondTopBase * secondTrapeziumHeightFromOrdinates / 2;
             return secondTrapeziumAreaFromOrdinatesDifference;
         } else {
-            float secondTrapeziumArea = secondTrapeziumTopBase * secondTrapeziumHeight / 2;
+            float secondTrapeziumArea = secondTopBase * secondHeight / 2;
             solutionForSecondTrapezium = secondTrapeziumArea;
         }
         return solutionForSecondTrapezium;
@@ -408,12 +231,12 @@ public class TrapeziumPrism {
         float medialTrapeziumHeightFromOrdinates;
         float medialTrapeziumAreaFromOrdinatesDifference;
 
-        if (medialTrapeziumHeight <= 0) {
-            medialTrapeziumHeightFromOrdinates = (((medialTrapeziumTopOrdinate1 + medialTrapeziumTopOrdinate2) / 2) - ((medialTrapeziumBottomOrdinate1 + medialTrapeziumBottomOrdinate2) / 2));
-            medialTrapeziumAreaFromOrdinatesDifference = medialTrapeziumTopBase * medialTrapeziumHeightFromOrdinates / 2;
+        if (medialHeight <= 0) {
+            medialTrapeziumHeightFromOrdinates = (((medialTopOrdinate1 + medialTopOrdinate2) / 2) - ((medialBottomOrdinate1 + medialBottomOrdinate2) / 2));
+            medialTrapeziumAreaFromOrdinatesDifference = medialTopBase * medialTrapeziumHeightFromOrdinates / 2;
             return medialTrapeziumAreaFromOrdinatesDifference;
         } else {
-            float medialTrapeziumArea = medialTrapeziumTopBase * medialTrapeziumHeight / 2;
+            float medialTrapeziumArea = medialTopBase * medialHeight / 2;
             solutionForMedialTrapezium = medialTrapeziumArea;
         }
         return solutionForMedialTrapezium;
@@ -422,54 +245,54 @@ public class TrapeziumPrism {
     public float SolveForTopTrapeziumArea() {
         float solutionForTopTrapeziumArea;
 
-        if (ConvertTrapeziumPrismStringChainageToFloatLength() != 0) {
-            return solutionForTopTrapeziumArea = trapeziumPrismVariableAForTopSurfaceAreaForSimpsonMethod * ConvertTrapeziumPrismStringChainageToFloatLength();
+        if (ConvertStringChainageToFloatLength() != 0) {
+            return solutionForTopTrapeziumArea = topWidthForSimpsonMethod * ConvertStringChainageToFloatLength();
         } else {
-            return solutionForTopTrapeziumArea = trapeziumPrismVariableAForTopSurfaceAreaForSimpsonMethod * trapeziumPrismVariableBForTopSurfaceAreaForSimpsonMethod;
+            return solutionForTopTrapeziumArea = topWidthForSimpsonMethod * topLengthForSimpsonMethod;
         }
     }
 
     public float SolveForBottomTrapeziumArea() {
         float solutionForBottomTrapeziumArea;
 
-        if (ConvertTrapeziumPrismStringChainageToFloatLength() != 0) {
-            return solutionForBottomTrapeziumArea = trapeziumPrismVariableCForBottomSurfaceAreaForSimpsonMethod * ConvertTrapeziumPrismStringChainageToFloatLength();
+        if (ConvertStringChainageToFloatLength() != 0) {
+            return solutionForBottomTrapeziumArea = bottomWidthForSimpsonMethod * ConvertStringChainageToFloatLength();
         } else {
-            return solutionForBottomTrapeziumArea = trapeziumPrismVariableCForBottomSurfaceAreaForSimpsonMethod * trapeziumPrismVariableDForBottomSurfaceAreaForSimpsonMethod;
+            return solutionForBottomTrapeziumArea = bottomWidthForSimpsonMethod * bottomLengthForSimpsonMethod;
         }
     }
 
     public float SolveForMedialTrapeziumAreaParallelToTopAndBottom() {
         float solutionForMedialTrapeziumAreaToTopAndBottom;
 
-        if (ConvertTrapeziumPrismStringChainageToFloatLength() > 0) {
-            return solutionForMedialTrapeziumAreaToTopAndBottom = (((trapeziumPrismVariableAForTopSurfaceAreaForSimpsonMethod + trapeziumPrismVariableCForBottomSurfaceAreaForSimpsonMethod)/2) * ConvertTrapeziumPrismStringChainageToFloatLength());
+        if (ConvertStringChainageToFloatLength() > 0) {
+            return solutionForMedialTrapeziumAreaToTopAndBottom = (((topWidthForSimpsonMethod + bottomWidthForSimpsonMethod) / 2) * ConvertStringChainageToFloatLength());
         } else {
-            return solutionForMedialTrapeziumAreaToTopAndBottom = (((trapeziumPrismVariableAForTopSurfaceAreaForSimpsonMethod + trapeziumPrismVariableCForBottomSurfaceAreaForSimpsonMethod)/2) * (trapeziumPrismVariableBForTopSurfaceAreaForSimpsonMethod + trapeziumPrismVariableDForBottomSurfaceAreaForSimpsonMethod)/2);
+            return solutionForMedialTrapeziumAreaToTopAndBottom = (((topWidthForSimpsonMethod + bottomWidthForSimpsonMethod) / 2) * (topLengthForSimpsonMethod + bottomLengthForSimpsonMethod) / 2);
         }
     }
 
     public float AverageCrossSectionMethodForTrapeziumPrism() {
 
-        float trapeziumPrismVolumeAverageCrossSectionnMethod = (float) (0.5 * (SolveForFirstTrapezium() + SolveForSecondTrapezium()) * ConvertTrapeziumPrismStringChainageToFloatLength());
+        float trapeziumPrismVolumeAverageCrossSectionnMethod = (float) (0.5 * (SolveForFirstTrapezium() + SolveForSecondTrapezium()) * ConvertStringChainageToFloatLength());
 
         return trapeziumPrismVolumeAverageCrossSectionnMethod;
     }
 
     public float SimpsonMethodForTrapeziumPrism() {
 
-        if (trapeziumPrismHeightForSimpsonMethod > 0) {
-            float trapeziumPrismVolumeSimpsonMethod = (float) ((trapeziumPrismHeightForSimpsonMethod / 6) * (SolveForTopTrapeziumArea() + SolveForBottomTrapeziumArea() + 4 * SolveForMedialTrapeziumAreaParallelToTopAndBottom()));
+        if (heightForSimpsonMethod > 0) {
+            float trapeziumPrismVolumeSimpsonMethod = (float) ((heightForSimpsonMethod / 6) * (SolveForTopTrapeziumArea() + SolveForBottomTrapeziumArea() + 4 * SolveForMedialTrapeziumAreaParallelToTopAndBottom()));
             return trapeziumPrismVolumeSimpsonMethod;
         } else {
-            float trapeziumPrismVolumeSimpsonMethodFromOrdinates = (float) (((((trapeziumPrismTopOrdinate1ForSimpsonMethod + trapeziumPrismTopOrdinate2ForSimpsonMethod) / 2) - ((trapeziumPrismBottomOrdinate1ForSimpsonMethod + trapeziumPrismTopOrdinate2ForSimpsonMethod) / 2)) / 6) * (SolveForTopTrapeziumArea() + SolveForBottomTrapeziumArea() + 4 * SolveForMedialTrapeziumAreaParallelToTopAndBottom()));
+            float trapeziumPrismVolumeSimpsonMethodFromOrdinates = (float) (((((topOrdinate1ForSimpsonMethod + topOrdinate2ForSimpsonMethod) / 2) - ((bottomOrdinate1ForSimpsonMethod + topOrdinate2ForSimpsonMethod) / 2)) / 6) * (SolveForTopTrapeziumArea() + SolveForBottomTrapeziumArea() + 4 * SolveForMedialTrapeziumAreaParallelToTopAndBottom()));
             return trapeziumPrismVolumeSimpsonMethodFromOrdinates;
         }
     }
 
     public float MedialCrossSectionMethodForTrapeziumPrism() {
 
-        float trapeziumPrismVolumeMedialCrossSectionnMethod = (float) (0.5 * SolveForMedialTrapezium() * ConvertTrapeziumPrismStringChainageToFloatLength());
+        float trapeziumPrismVolumeMedialCrossSectionnMethod = (float) (0.5 * SolveForMedialTrapezium() * ConvertStringChainageToFloatLength());
 
         return trapeziumPrismVolumeMedialCrossSectionnMethod;
     }

@@ -12,7 +12,7 @@ public class Main {
         TrapeziumPrism inputAndOutputTrapeziumPrism = new TrapeziumPrism();
 
 
-        while (programIsRunning) {
+        do {
             MenuToDisplay.displayMainMenu();
             int choseTypeOfTrench = scanner.nextInt();
 
@@ -25,14 +25,11 @@ public class Main {
 
                         switch (choseTriangularCalculatingMethods) {
                             case 1:
-                                System.out.println("You have selected: Average cross - section method");
-                                System.out.println("Please set variables to calculate");
-                                System.out.println("----------------------------------------------------- ");
-                                System.out.println("Beginning chainage of the trench in meters and with '.'(dot)");
-                                inputAndOutputTrianglePrism.setTrianglePrismBeginningChainage(scanner.next());
+                                MenuToDisplay.DisplayTriangularAverageCrossSection();
+                                inputAndOutputTrianglePrism.setBeginningChainage(scanner.next());
                                 System.out.println("Closing chainage of the trench in meters and with '.'(dot)");
-                                inputAndOutputTrianglePrism.setTrianglePrismClosingChainage(scanner.next());
-                                System.out.println("Length of the trench from set chainage = " + inputAndOutputTrianglePrism.ConvertTrianglePrismStringChainageToFloatLength() + "m");
+                                inputAndOutputTrianglePrism.setClosingChainage(scanner.next());
+                                System.out.println("Length of the trench from set chainage = " + inputAndOutputTrianglePrism.ConvertStringBeginningChainageToFloat() + "m");
                                 System.out.println("First triangular cross - section variables");
                                 System.out.println("Bottom ordinate of first triangular cross - section");
                                 inputAndOutputTrianglePrism.setFirstTriangleBottomOrdinate(scanner.nextFloat());
@@ -60,10 +57,7 @@ public class Main {
                                 System.out.println("Volume of the earthwork for set parameters = " + inputAndOutputTrianglePrism.AverageCrossSectionMethodForTrianglePrism() + "m" + '\u00B3');
                                 break;
                             case 2:
-                                System.out.println("You have selected: Average cross - section method");
-                                System.out.println("Please set variables to calculate");
-                                System.out.println("----------------------------------------------------- ");
-                                System.out.println("Beginning chainage of the trench in meters and with '.'(dot)");
+                                MenuToDisplay.DisplayTriangularMedialCrossSection();
                                 inputAndOutputTrianglePrism.setTrianglePrismBeginningChainage(scanner.next());
                                 System.out.println("Closing chainage of the trench in meters and with '.'(dot)");
                                 inputAndOutputTrianglePrism.setTrianglePrismClosingChainage(scanner.next());
@@ -100,104 +94,94 @@ public class Main {
 
                         switch (radixTrapezoidalCalculatingMethods) {
                             case 1:
-                                System.out.println("You have selected: Average cross - section method");
-                                System.out.println("Please set variables to calculate");
-                                System.out.println("----------------------------------------------------- ");
-                                System.out.println("Beginning chainage of the trench in meters and with '.'(dot)");
-                                inputAndOutputTrapeziumPrism.setTrapeziumPrismBeginningChainage(scanner.next());
+                                MenuToDisplay.DisplayTrapezoidalAverageCrossSection();
+                                inputAndOutputTrapeziumPrism.setBeginningChainage(scanner.next());
                                 System.out.println("Closing chainage of the trench in meters and with '.'(dot)");
-                                inputAndOutputTrapeziumPrism.setTrapeziumPrismClosingChainage(scanner.next());
-                                System.out.println("Length of the trench from set chainage = " + inputAndOutputTrapeziumPrism.ConvertTrapeziumPrismStringChainageToFloatLength() + "m");
+                                inputAndOutputTrapeziumPrism.setClosingChainage(scanner.next());
+                                System.out.println("Length of the trench from set chainage = " + inputAndOutputTrapeziumPrism.ConvertStringChainageToFloatLength() + "m");
                                 System.out.println("First trapezoidal cross - section variables");
                                 System.out.println("Bottom ordinate of first trapezoidal cross - section (1)");
-                                inputAndOutputTrapeziumPrism.setFirstTrapeziumBottomOrdinate1(scanner.nextFloat());
+                                inputAndOutputTrapeziumPrism.setFirstBottomOrdinate1(scanner.nextFloat());
                                 System.out.println("Bottom ordinate of first trapezoidal cross - section (2)");
-                                inputAndOutputTrapeziumPrism.setFirstTrapeziumBottomOrdinate2(scanner.nextFloat());
+                                inputAndOutputTrapeziumPrism.setFirstBottomOrdinate2(scanner.nextFloat());
                                 System.out.println("Top ordinate of first trapezoidal cross - section (1)");
-                                inputAndOutputTrapeziumPrism.setFirstTrapeziumTopOrdinate1(scanner.nextFloat());
+                                inputAndOutputTrapeziumPrism.setFirstTopOrdinate1(scanner.nextFloat());
                                 System.out.println("Top ordinate of first trapezoidal cross - section (2)");
-                                inputAndOutputTrapeziumPrism.setFirstTrapeziumTopOrdinate2(scanner.nextFloat());
+                                inputAndOutputTrapeziumPrism.setFirstTopOrdinate2(scanner.nextFloat());
                                 System.out.println("Height of first trapezoidal cross - section");
-                                inputAndOutputTrapeziumPrism.setFirstTrapeziumHeight(scanner.nextFloat());
+                                inputAndOutputTrapeziumPrism.setFirstHeight(scanner.nextFloat());
                                 System.out.println("Top width of first trapezoidal cross - section");
-                                inputAndOutputTrapeziumPrism.setFirstTrapeziumTopBase(scanner.nextFloat());
+                                inputAndOutputTrapeziumPrism.setFirstTopBase(scanner.nextFloat());
                                 System.out.println("Bottom width of first trapezoidal cross - section");
-                                inputAndOutputTrapeziumPrism.setFirstTrapeziumBottomBase(scanner.nextFloat());
+                                inputAndOutputTrapeziumPrism.setFirstBottomBase(scanner.nextFloat());
                                 System.out.println("Second trapezoidal cross - section variables");
                                 System.out.println("Bottom ordinate of second trapezoidal cross - section (1)");
-                                inputAndOutputTrapeziumPrism.setSecondTrapeziumBottomOrdinate1(scanner.nextFloat());
+                                inputAndOutputTrapeziumPrism.setSecondBottomOrdinate1(scanner.nextFloat());
                                 System.out.println("Bottom ordinate of second trapezoidal cross - section (2)");
-                                inputAndOutputTrapeziumPrism.setSecondTrapeziumBottomOrdinate2(scanner.nextFloat());
+                                inputAndOutputTrapeziumPrism.setSecondBottomOrdinate2(scanner.nextFloat());
                                 System.out.println("Top ordinate of second trapezoidal cross - section (1)");
-                                inputAndOutputTrapeziumPrism.setSecondTrapeziumTopOrdinate1(scanner.nextFloat());
+                                inputAndOutputTrapeziumPrism.setSecondTopOrdinate1(scanner.nextFloat());
                                 System.out.println("Top ordinate of second trapezoidal cross - section (2)");
-                                inputAndOutputTrapeziumPrism.setSecondTrapeziumTopOrdinate2(scanner.nextFloat());
+                                inputAndOutputTrapeziumPrism.setSecondTopOrdinate2(scanner.nextFloat());
                                 System.out.println("Height of second trapezoidal cross - section");
-                                inputAndOutputTrapeziumPrism.setSecondTrapeziumHeight(scanner.nextFloat());
+                                inputAndOutputTrapeziumPrism.setSecondHeight(scanner.nextFloat());
                                 System.out.println("Top width of second trapezoidal cross - section");
-                                inputAndOutputTrapeziumPrism.setSecondTrapeziumTopBase(scanner.nextFloat());
+                                inputAndOutputTrapeziumPrism.setSecondTopBase(scanner.nextFloat());
                                 System.out.println("Bottom width of second trapezoidal cross - section");
-                                inputAndOutputTrapeziumPrism.setSecondTrapeziumBottomBase(scanner.nextFloat());
+                                inputAndOutputTrapeziumPrism.setSecondBottomBase(scanner.nextFloat());
                                 System.out.println("Area of the second trapezoidal cross - section = " + inputAndOutputTrapeziumPrism.SolveForSecondTrapezium() + "m" + '\u00B2');
                                 System.out.println("Volume of the earthwork for set parameters = " + inputAndOutputTrapeziumPrism.AverageCrossSectionMethodForTrapeziumPrism() + "m" + '\u00B3');
                                 break;
                             case 2:
-                                System.out.println("You have selected: Simpson method");
-                                System.out.println("Please set variables to calculate");
-                                System.out.println("----------------------------------------------------- ");
-                                System.out.println("Beginning chainage of the trench in meters and with '.'(dot)");
-                                inputAndOutputTrapeziumPrism.setTrapeziumPrismBeginningChainage(scanner.next());
+                                MenuToDisplay.DisplayTrapezoidalSimpson();
+                                inputAndOutputTrapeziumPrism.setBeginningChainage(scanner.next());
                                 System.out.println("Closing chainage of the trench in meters and with '.'(dot)");
-                                inputAndOutputTrapeziumPrism.setTrapeziumPrismClosingChainage(scanner.next());
+                                inputAndOutputTrapeziumPrism.setClosingChainage(scanner.next());
                                 System.out.println("Height of the trench");
-                                inputAndOutputTrapeziumPrism.setTrapeziumPrismHeightForSimpsonMethod(scanner.nextFloat());
+                                inputAndOutputTrapeziumPrism.setHeightForSimpsonMethod(scanner.nextFloat());
                                 System.out.println("Top area variables");
                                 System.out.println("First top ordinate of the trench");
-                                inputAndOutputTrapeziumPrism.setTrapeziumPrismTopOrdinate1ForSimpsonMethod(scanner.nextFloat());
+                                inputAndOutputTrapeziumPrism.setTopOrdinate1ForSimpsonMethod(scanner.nextFloat());
                                 System.out.println("Second top ordinate of the trench");
-                                inputAndOutputTrapeziumPrism.setTrapeziumPrismTopOrdinate2ForSimpsonMethod(scanner.nextFloat());
+                                inputAndOutputTrapeziumPrism.setTopOrdinate2ForSimpsonMethod(scanner.nextFloat());
                                 System.out.println("Top width of the trench");
-                                inputAndOutputTrapeziumPrism.setTrapeziumPrismVariableAForTopSurfaceAreaForSimpsonMethod(scanner.nextFloat());
+                                inputAndOutputTrapeziumPrism.setTopWidthForSimpsonMethod(scanner.nextFloat());
                                 System.out.println("Top length of the trench");
-                                inputAndOutputTrapeziumPrism.setTrapeziumPrismVariableBForTopSurfaceAreaForSimpsonMethod(scanner.nextFloat());
+                                inputAndOutputTrapeziumPrism.setTopLengthForSimpsonMethod(scanner.nextFloat());
                                 System.out.println("Top area of the trench = " + inputAndOutputTrapeziumPrism.SolveForTopTrapeziumArea() + "m" + '\u00B2');
                                 System.out.println("Bottom area variables");
                                 System.out.println("First bottom ordinate of the trench");
-                                inputAndOutputTrapeziumPrism.setTrapeziumPrismBottomOrdinate1ForSimpsonMethod(scanner.nextFloat());
+                                inputAndOutputTrapeziumPrism.setBottomOrdinate1ForSimpsonMethod(scanner.nextFloat());
                                 System.out.println("Second bottom ordinate of the trench");
-                                inputAndOutputTrapeziumPrism.setTrapeziumPrismBottomOrdinate2ForSimpsonMethod(scanner.nextFloat());
+                                inputAndOutputTrapeziumPrism.setBottomOrdinate2ForSimpsonMethod(scanner.nextFloat());
                                 System.out.println("Bottom width of the trench");
-                                inputAndOutputTrapeziumPrism.setTrapeziumPrismVariableCForBottomSurfaceAreaForSimpsonMethod(scanner.nextFloat());
+                                inputAndOutputTrapeziumPrism.setBottomWidthForSimpsonMethod(scanner.nextFloat());
                                 System.out.println("Bottom length of the trench");
-                                inputAndOutputTrapeziumPrism.setTrapeziumPrismVariableDForBottomSurfaceAreaForSimpsonMethod(scanner.nextFloat());
+                                inputAndOutputTrapeziumPrism.setBottomLengthForSimpsonMethod(scanner.nextFloat());
                                 System.out.println("Bottom area of the trench = " + inputAndOutputTrapeziumPrism.SolveForBottomTrapeziumArea() + "m" + '\u00B2');
                                 System.out.println("Medial area of parallel cross - section to top area and bottom area of the trench = " + inputAndOutputTrapeziumPrism.SolveForMedialTrapeziumAreaParallelToTopAndBottom() + "m" + '\u00B2');
                                 System.out.println("Volume of the earthwork for set parameters = " + inputAndOutputTrapeziumPrism.SimpsonMethodForTrapeziumPrism() + "m" + '\u00B3');
                                 break;
                             case 3:
-                                System.out.println("You have selected: Medial cross - section method");
-                                System.out.println("Please set variables to calculate");
-                                System.out.println("----------------------------------------------------- ");
-                                System.out.println("Medial trapezoidal cross - section variables");
-                                System.out.println("Beginning chainage of the trench in meters and with '.'(dot)");
-                                inputAndOutputTrapeziumPrism.setTrapeziumPrismBeginningChainage(scanner.next());
+                                MenuToDisplay.DisplayTrapezoidalMedialCrossSection();
+                                inputAndOutputTrapeziumPrism.setBeginningChainage(scanner.next());
                                 System.out.println("Closing chainage of the trench in meters and with '.'(dot)");
-                                inputAndOutputTrapeziumPrism.setTrapeziumPrismClosingChainage(scanner.next());
-                                System.out.println("Length of the trench from set chainage = " + inputAndOutputTrapeziumPrism.ConvertTrapeziumPrismStringChainageToFloatLength() + "m");
+                                inputAndOutputTrapeziumPrism.setClosingChainage(scanner.next());
+                                System.out.println("Length of the trench from set chainage = " + inputAndOutputTrapeziumPrism.ConvertStringChainageToFloatLength() + "m");
                                 System.out.println("Bottom ordinate of medial trapezoidal cross - section (1)");
-                                inputAndOutputTrapeziumPrism.setMedialTrapeziumBottomOrdinate1(scanner.nextFloat());
+                                inputAndOutputTrapeziumPrism.setMedialBottomOrdinate1(scanner.nextFloat());
                                 System.out.println("Bottom ordinate of medial trapezoidal cross - section (2)");
-                                inputAndOutputTrapeziumPrism.setMedialTrapeziumBottomOrdinate2(scanner.nextFloat());
+                                inputAndOutputTrapeziumPrism.setMedialBottomOrdinate2(scanner.nextFloat());
                                 System.out.println("Top ordinate of medial trapezoidal cross - section (1)");
-                                inputAndOutputTrapeziumPrism.setMedialTrapeziumTopOrdinate1(scanner.nextFloat());
+                                inputAndOutputTrapeziumPrism.setMedialTopOrdinate1(scanner.nextFloat());
                                 System.out.println("Top ordinate of medial trapezoidal cross - section (2)");
-                                inputAndOutputTrapeziumPrism.setMedialTrapeziumTopOrdinate2(scanner.nextFloat());
+                                inputAndOutputTrapeziumPrism.setMedialTopOrdinate2(scanner.nextFloat());
                                 System.out.println("Height of medial trapezoidal cross - section");
-                                inputAndOutputTrapeziumPrism.setMedialTrapeziumHeight(scanner.nextFloat());
+                                inputAndOutputTrapeziumPrism.setMedialHeight(scanner.nextFloat());
                                 System.out.println("Top width of medial trapezoidal cross - section");
-                                inputAndOutputTrapeziumPrism.setMedialTrapeziumTopBase(scanner.nextFloat());
+                                inputAndOutputTrapeziumPrism.setMedialTopBase(scanner.nextFloat());
                                 System.out.println("Bottom width of medial trapezoidal cross - section");
-                                inputAndOutputTrapeziumPrism.setMedialTrapeziumBottomBase(scanner.nextFloat());
+                                inputAndOutputTrapeziumPrism.setMedialBottomBase(scanner.nextFloat());
                                 System.out.println("Area of the second medial trapezoidal cross - section = " + inputAndOutputTrapeziumPrism.SolveForMedialTrapezium() + "m" + '\u00B2');
                                 System.out.println("Volume of earthwork: " + inputAndOutputTrapeziumPrism.MedialCrossSectionMethodForTrapeziumPrism() + "m" + '\u00B3');
                                 break;
@@ -217,6 +201,6 @@ public class Main {
                     System.out.println("Wrong button! Please select 1 or 2.");
                     break;
             }
-        }
+        } while (scanner.nextInt() ==0);
     }
 }
