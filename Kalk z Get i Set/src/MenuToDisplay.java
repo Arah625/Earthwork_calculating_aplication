@@ -1,7 +1,6 @@
 public class MenuToDisplay {
 
 
-
     public static void DisplayMainMenu() {
         System.out.println("Select type of trench");
         System.out.println("1 - Triangular");
