@@ -1,7 +1,8 @@
 public class MenuToDisplay {
 
 
-    public static void displayMainMenu() {
+
+    public static void DisplayMainMenu() {
         System.out.println("Select type of trench");
         System.out.println("1 - Triangular");
         System.out.println("2 - Trapezoidal");

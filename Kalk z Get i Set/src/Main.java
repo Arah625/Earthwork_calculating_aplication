@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class Main {
 
 
+    
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         boolean programIsRunning = true;
@@ -13,7 +14,7 @@ public class Main {
 
 
         while (programIsRunning) {
-            MenuToDisplay.displayMainMenu();
+            MenuToDisplay.DisplayMainMenu();
             int choseTypeOfTrench = scanner.nextInt();
 
             switch (choseTypeOfTrench) {
